@@ -7,8 +7,14 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
-class Libray
+class library
 {
+private:
+
+  book *head;
+
+public:
+  library(); 
 };
 
 #endif // LIBRARY_H
