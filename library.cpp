@@ -16,3 +16,13 @@ void library::print()
   
 }
 
+void library::readFromFile()
+{
+  ifstream file; 
+  cout << "Insert file name: ";
+  cin >> filename;
+  file.open(filename + ".txt");
+
+  
+}
+
