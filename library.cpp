@@ -1,4 +1,5 @@
 #include "library.h"
+#include <list>
 
 using namespace std; 
 library::library()
@@ -6,14 +7,14 @@ library::library()
   myLibrary = list<book>();
 }
 
-void library::insertSorted(std::string book_title, std::string author_name, std::string isbn_code, int page_num, int year_num, float cover_price){
+void library::insertSorted(std::string author_name){
   
-  if (bookList.empty()) {
-    bookList.push_back(book);
+  if (myLibrary.empty()) {
+    myLibrary.push_back(book);
   } else {
-    for (auto it = bookList.begin(); it != bookList.end(); ++it) {
-      if (book.author < it->author) {
-	bookList.insert(it, book);
+    for (auto it = myLibrary.begin(); it != myLibrary.end(); ++it) {
+      if (author_name < it->author) {
+	myLibrary.insert(it, book);
       }
 }
 
