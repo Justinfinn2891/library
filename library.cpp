@@ -1,5 +1,7 @@
 #include "library.h"
 #include <list>
+#include <iostream>
+#include "book.h"
 
 using namespace std; 
 library::library()
@@ -8,6 +10,7 @@ library::library()
 }
 
 void library::insertSorted(std::string author_name){
+
   
   if (myLibrary.empty()) {
     myLibrary.push_back(book);
