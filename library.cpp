@@ -36,7 +36,7 @@ void library::readFromFile()
       cin >> temp.isbn_code >> temp.page_num >> temp.year_num >> temp.cover_price; 
     }
   cout << "===================================" << endl;
-  cout << "====FILE ENTERED SUCCESSFULLY======" << endl;
+  cout << "====FILE  ENTERED  SUCCESSFULLY====" << endl;
   cout << "===================================" << endl; 
 }
 
