@@ -8,16 +8,12 @@ int main()
   //creates any needed variables
   int x = 0;
   string name, last, num = "";
-
-    cout << "\nPlease enter your choice now:";
-    cin >> x;
-    for(int i =0;i < 20; i++){
+    for(int i =0;i < 40; i++){
       cout<<"+X";
     }
     cout<<endl;
-  
+    
   while(x != 8){
-
     cout << "\nWelcome to the UTM Library!  You may select one of the following options:\n";
     cout << "1 Read a file to the Library\n";
     cout << "2 Write the Library to a file\n";
@@ -30,7 +26,8 @@ int main()
 
     cout << "\nPlease enter your choice now:";
     cin >> x;
-    for(int i =0;i < 20;i++){
+    cout<<endl;  
+    for(int i =0;i < 40;i++){
       cout<<"+X";
     }
     cout<<endl;
@@ -82,5 +79,6 @@ int main()
 
     }
   }
+  
   return 0; 
 }
