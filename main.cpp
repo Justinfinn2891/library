@@ -10,7 +10,7 @@ int main()
   string name, last, num = "";
     
   while(x != 8){
-      int x = 0;
+    cout<<"\n";
   string name, last, num = "";
     for(int i =0;i < 40; i++){
       cout<<"+X";
@@ -34,37 +34,37 @@ int main()
       cout<<"+X";
     }
     cout<<endl;
-    
+    cout<<"\n";
     switch (x) {
 
     case 1:
       //reads information out of a file into nodes
-      cout << "Save File function";
+      cout << "Save File function\n";
       break;
 
     case 2:
       //writes all nodes into a file
-      cout << "Load file Info to File";
+      cout << "Load file Info to File\n";
       break;
 
     case 3:
       //prints out all nodes to console
-      cout<<"Print Function";
+      cout<<"Print Function\n";
       break;
 
     case 4:
       //looks up Book according to Book name provided
-      cout << "Enter the user's name: ";
+      cout << "Enter the user's name: \n";
       break;
 
     case 5:
       //looks up book according to the author provided
-      cout << "Author search";
+      cout << "Author search\n";
       break;
 
     case 6:
       //adds a book according to user input
-      cout << "Add Book Function";
+      cout << "Add Book Function\n";
       break;
       
     case 7:
