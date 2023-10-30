@@ -11,7 +11,7 @@ class library
 {
 private:
 
-  book temp; 
+  list<book> myLibrary;  
 
 public:
   library();

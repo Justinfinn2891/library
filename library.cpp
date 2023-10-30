@@ -13,7 +13,10 @@ void library::insertSorted(std::string book_title, std::string author_name, std:
 
 void library::print()
 {
-  
+  for(auto it = myLibrary.begin(); it != myLibrary.end(); ++it)
+    {
+      cout << "Title: " << 
+    }
 }
 
 void library::readFromFile()
@@ -38,5 +41,10 @@ void library::readFromFile()
   cout << "===================================" << endl;
   cout << "====FILE  ENTERED  SUCCESSFULLY====" << endl;
   cout << "===================================" << endl; 
+}
+
+void library::inputToFile()
+{
+  
 }
 
