@@ -11,8 +11,8 @@ int main()
 
     cout << "\nPlease enter your choice now:";
     cin >> x;
-    for(int i =0,i<20,i++){
-      cout<<"+X"
+    for(int i =0;i < 20; i++){
+      cout<<"+X";
     }
     cout<<endl;
   
@@ -30,8 +30,8 @@ int main()
 
     cout << "\nPlease enter your choice now:";
     cin >> x;
-    for(int i =0,i<20,i++){
-      cout<<"+X"
+    for(int i =0;i < 20;i++){
+      cout<<"+X";
     }
     cout<<endl;
     
