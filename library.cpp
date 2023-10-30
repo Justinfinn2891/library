@@ -3,7 +3,7 @@
 using namespace std; 
 library::library()
 {
-  // STUFF
+  myLibrary = list<book>();
 }
 
 void library::insertSorted(std::string book_title, std::string author_name, std::string isbn_code, int page_num, int year_num, float cover_price)
@@ -15,7 +15,7 @@ void library::print()
 {
   for(auto it = myLibrary.begin(); it != myLibrary.end(); ++it)
     {
-      cout << "Title: " << 
+      cout << "Title: ";
     }
 }
 

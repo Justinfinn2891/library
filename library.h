@@ -11,7 +11,7 @@ class library
 {
 private:
 
-  list<book> myLibrary;  
+  std::list<book> myLibrary;  
 
 public:
   library();
