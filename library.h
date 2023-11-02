@@ -15,15 +15,15 @@ private:
 
 public:
   library();
-  void readFromFile();
-  void inputToFile();
+  void readFromFile(const std::string& filename);
+  void inputToFile(const std::string& filename);
 
-  void insertSorted(std::string author_name);
-  void lookup();
+  void insertSorted(const book& newBook);
+  void findAuthor(const std::string& authorName);
   
-  void reverse_lookup();
+  void findBook(const std::string& bookName);
   void print();
-  void deleteInformation(); 
+  void deleteInfo(const std::string& authorName, const std::string& bookName); 
 };
 
 #endif // LIBRARY_H
