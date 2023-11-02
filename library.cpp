@@ -96,7 +96,7 @@ void library::insertSorted(const book& newBook){
 
   void library::inputToFile(const std::string& filename){
     ofstream file(filename + ".txt");
-    
+    //outputs all of stored book structures into a .txt file named by the user    
     for (const auto& book : myLibrary) {
       file << book.book_title << ", " << book.author_name << ", " << book.isbn_code << ", "
 	   << book.page_num << ", " << book.year_num << ", " <<fixed<<setprecision(2)<<book.cover_price<<"," << endl;
@@ -107,6 +107,8 @@ void library::insertSorted(const book& newBook){
 
   void library::findAuthor(const string& authorName) {
     cout << "Books by " << authorName << ":\n";
+
+    //search through the library to find any books by the provided author name
     for (const book& book : myLibrary) {
       if (book.author_name == authorName) {
 	cout << "Title: " << book.book_title << "\n";
@@ -119,6 +121,7 @@ void library::insertSorted(const book& newBook){
   }
   
   void library::findBook(const string& bookName) {
+    //looks for the provided book title within the library
     for (const book& book : myLibrary) {
       if (book.book_title == bookName) {
 	cout << "Book Found:\n";
@@ -131,11 +134,13 @@ void library::insertSorted(const book& newBook){
 	return; // Stop after finding the first match
       }
     }
+    //ifnot found it tells the user
     cout << "Book not found.\n";
   }
   
   void library::deleteInfo(const string& authorName, const string& bookName){
     auto it = myLibrary.begin();
+    //cycles through the library for a matching author and title before deleting that structure
     while (it != myLibrary.end()) {
       if (it->author_name == authorName && it->book_title == bookName) {
 	it = myLibrary.erase(it);

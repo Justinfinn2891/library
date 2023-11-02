@@ -9,7 +9,7 @@
 class library
 {
 private:
-
+  //creates the library or list of book structures
   std::list<book> myLibrary;  
 
 public:

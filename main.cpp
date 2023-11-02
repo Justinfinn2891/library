@@ -12,9 +12,11 @@ int main()
   int x = 0;
   string name, last, num, trash = "";
   //the trash variable is to stop any getlines from reading in when they aren't supposed to
-  
+
+  // create a menu loop for the user
   while(x != 8){
     cout<<"\n";
+    //add a little spice by creating borders with this loop
   string name, last, num = "";
     for(int i =0;i < 40; i++){
       cout<<"+X";
@@ -33,12 +35,15 @@ int main()
     cout << "\nPlease enter your choice now:";
     cin >> x;
     cout<<endl;
-    
+
+    //more spice for the ui
     for(int i =0;i < 40;i++){
       cout<<"+X";
     }
     cout<<endl;
     cout<<"\n";
+
+    //determines what you want to happen according to user input
     switch (x) {
 
     case 1:{
@@ -117,9 +122,11 @@ int main()
       break;
     }
     case 8:{
+      //quits the loop
       cout << "Exiting program.\n";
       break;
     }
+      //if none of the above... the user is slow and should try again
     default:
       cout << "Invalid choice. Please try again.\n";
       break;
