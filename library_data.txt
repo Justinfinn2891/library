@@ -1,0 +1,10 @@
+The Catcher in the Rye, J.D. Salinger, 234567890, 224, 1951, 10.99
+To Kill a Mockingbird, Harper Lee, 0061120081, 324, 1960, 12.99
+1984, George Orwell, 0451524934, 328, 1949, 9.99
+Pride and Prejudice, Jane Austen, 0141439513, 432, 1813, 8.99
+The Great Gatsby, F. Scott Fitzgerald, 0743273567, 180, 1925, 11.99
+War and Peace, Leo Tolstoy, 0199232768, 1392, 1869, 15.99
+Moby-Dick, Herman Melville, 0141199594, 720, 1851, 13.99
+The Hobbit, J.R.R. Tolkien, 054792822X, 310, 1937, 14.99
+To the Lighthouse, Virginia Woolf, 0156907399, 209, 1927, 10.99
+Brave New World, Aldous Huxley, 0060850523, 288, 1932, 9.99
