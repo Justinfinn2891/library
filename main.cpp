@@ -69,6 +69,7 @@ int main()
     case 4:{
       //looks up Book according to Book Title provided
       string bookTitle;
+      getline(cin, trash);
       cout << "Enter Book Title: ";
       getline(cin, bookTitle);
       myLibrary.findBook(bookTitle);

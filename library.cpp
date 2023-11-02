@@ -2,6 +2,8 @@
 #include <list>
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <iomanip>
 #include "book.h"
 
 using namespace std;
@@ -12,26 +14,30 @@ library::library()
 }
 
 void library::insertSorted(const book& newBook){  
-  if(myLibrary.empty()) {
+  if (myLibrary.empty()) {
     myLibrary.push_back(newBook);
   } else {
-    for (auto it = myLibrary.begin(); it != myLibrary.end(); ++it) {
-      if(newBook.author_name < it->author_name) {
-	myLibrary.insert(it,newBook);
-      }
+    // Create an iterator to traverse the list
+    auto it = myLibrary.begin();
+
+    // Find the position where the new book should be inserted
+    while (it != myLibrary.end() && newBook.author_name > it->author_name) {
+      ++it;
     }
-    // If we reach here, it means the book belongs at the end of the list
-    myLibrary.push_back(newBook);
+
+    // Insert the new book before the found position
+    myLibrary.insert(it, newBook);
   }
 }
   void library::print(){
+    //prints out any and all book structures in the library
       for (const auto& book : myLibrary) {
 	cout << "Title: " << book.book_title << endl;
 	cout << "Author: " << book.author_name << endl;
 	cout << "ISBN: " << book.isbn_code << endl;
 	cout << "Pages: " << book.page_num << endl;
 	cout << "Year: " << book.year_num << endl;
-	cout << "Cover Price: " << book.cover_price << endl;
+	cout << "Cover Price: " <<fixed<<setprecision(2)<< book.cover_price << endl;
 	cout << "==========================\n";
       }
   }
@@ -40,17 +46,46 @@ void library::insertSorted(const book& newBook){
 
   void library::readFromFile(const string& filename){
     book temp; 
-    ifstream file; 
+    ifstream file;
+    string line;
     file.open(filename + ".txt");
-    while (getline(file, temp.book_title, ',') &&
-	   getline(file, temp.author_name, ',') &&
-	   (file >> temp.isbn_code >> temp.page_num >> temp.year_num >> temp.cover_price)){      
-      char newline;
-      file>>newline;//remove newline character
-      insertSorted(temp);
-      
-	cout<<temp.book_title<<" "<<temp.cover_price; 	
+    while (getline(file, line)) {
+      // Use string manipulation to split the line into fields
+      size_t pos = 0;
+      string delimiter = ",";
+      size_t count = 0;
+
+      while ((pos = line.find(delimiter)) != string::npos) {
+	string field = line.substr(0, pos);
+	line.erase(0, pos + delimiter.length());
+
+	// Parse and assign the fields to the book object
+	switch (count) {
+	case 0:
+	  temp.book_title = field;
+	  break;
+	case 1:
+	  temp.author_name = field;
+	  break;
+	case 2:
+	  temp.isbn_code = field;
+	  break;
+	case 3:
+	  temp.page_num = stoi(field);
+	  break;
+	case 4:
+	  temp.year_num = stoi(field);
+	  break;
+	case 5:
+	  temp.cover_price = stof(field);
+	  break;
+	}
+
+	count++;
       }
+      
+      insertSorted(temp);
+    }
     file.close();
     cout << "===================================" << endl;
     cout << "====FILE  ENTERED  SUCCESSFULLY====" << endl;
@@ -63,8 +98,8 @@ void library::insertSorted(const book& newBook){
     ofstream file(filename + ".txt");
     
     for (const auto& book : myLibrary) {
-      file << book.book_title << " , " << book.author_name << " , " << book.isbn_code << " , "
-	   << book.page_num << " , " << book.year_num << " , " << book.cover_price << endl;
+      file << book.book_title << ", " << book.author_name << ", " << book.isbn_code << ", "
+	   << book.page_num << ", " << book.year_num << ", " <<fixed<<setprecision(2)<<book.cover_price<<"," << endl;
     }
     
     file.close();
@@ -77,7 +112,7 @@ void library::insertSorted(const book& newBook){
 	cout << "Title: " << book.book_title << "\n";
 	cout<< "ISBN: " << book.isbn_code << "\n";
 	cout<<"Pages: "<< book.page_num<<"\n";
-	cout<<"Cover Price: "<< book.cover_price<<"\n";
+	cout<<"Cover Price: "<<fixed<<setprecision(2)<< book.cover_price<<"\n";
 	cout<<"Year: "<<book.year_num<<"\n";
       }
     }
@@ -91,7 +126,7 @@ void library::insertSorted(const book& newBook){
         cout << "Author: " << book.author_name << "\n";
         cout << "ISBN: " << book.isbn_code << "\n";
 	cout << "Pages: " << book.page_num << "\n";
-        cout << "Cover Price: " << book.cover_price << "\n";
+        cout << "Cover Price: " << fixed<<setprecision(2)<<book.cover_price << "\n";
         cout << "Year: " << book.year_num << "\n";
 	return; // Stop after finding the first match
       }
