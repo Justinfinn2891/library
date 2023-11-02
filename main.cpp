@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @author Justin Finn and Gabriel Speer
+ * @date 2023-11-01
+ * @brief main.cpp file
+ * 
+ * main driver that invokes library.h and book.h to create/modify/delete a library 
+ */
+
 #include "library.h"
 #include "book.h"
 #include <iostream>

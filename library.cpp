@@ -1,3 +1,12 @@
+/**
+ * @file library.cpp
+ * @author Justin Finn and Gabriel Speer
+ * @date 2023-11-01
+ * @brief .cpp file that keeps the methods for library class
+ * 
+ * keeps all the methods required for the library class and book.h 
+ */
+
 #include "library.h"
 #include <list>
 #include <iostream>
@@ -49,6 +58,15 @@ void library::insertSorted(const book& newBook){
     ifstream file;
     string line;
     file.open(filename + ".txt");
+    if(file.fail())
+    {
+      cout << endl;
+      cout << "+==========================+" << endl;
+      cout << "ERROR: FILE DOESN'T EXIST!" << endl;
+      cout << "+==========================+";
+      
+      return;
+    }
     while (getline(file, line)) {
       // Use string manipulation to split the line into fields
       size_t pos = 0;

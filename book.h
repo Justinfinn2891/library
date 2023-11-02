@@ -1,3 +1,12 @@
+/**
+ * @file book.h
+ * @author Justin Finn and Gabriel Speer 
+ * @date 2023-11-01
+ * @brief book header file 
+ * 
+ * book header file that holds struct 
+ */
+
 
 
 #include <string>
