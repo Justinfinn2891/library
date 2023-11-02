@@ -42,9 +42,13 @@ void library::insertSorted(const book& newBook){
     book temp; 
     ifstream file; 
     file.open(filename + ".txt");
-    while(file>> temp.book_title >> temp.author_name >> temp.isbn_code >> temp.page_num >> temp.year_num >> temp.cover_price)
-      {
-	insertSorted(temp);
+    while (getline(file, temp.book_title, ',') &&
+	   getline(file, temp.author_name, ',') &&
+	   (file >> temp.isbn_code >> temp.page_num >> temp.year_num >> temp.cover_price)){      
+      char newline;
+      file>>newline;//remove newline character
+      insertSorted(temp);
+      
 	cout<<temp.book_title<<" "<<temp.cover_price; 	
       }
     file.close();
