@@ -1,7 +1,6 @@
 #include "book.h"
 #include <iostream>
 #include <list>
-#include <string>
 #include <fstream>
 
 #ifndef LIBRARY_H
