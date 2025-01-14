@@ -14,7 +14,7 @@ Option 5:
 Option 6:
   Adds and Sorts a Book structure into the Library according to the user's inputs.
 Option 7:
-  Deletes the book structure with a matching Authot and Title
+  Deletes the book structure with a matching Author and Title
 Option 8:
   Quits the Program
 
